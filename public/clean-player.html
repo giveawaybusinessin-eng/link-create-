@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Clean Stream</title>
+  <style>
+    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    iframe { width: 100%; height: 100%; border: none; }
+  </style>
+</head>
+<body>
+  <iframe id="streamFrame" sandbox="allow-scripts allow-same-origin allow-forms" allow="autoplay; fullscreen"></iframe>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const embedUrl = params.get('embed');
+    if (embedUrl) {
+      document.getElementById('streamFrame').src = embedUrl;
+    }
+  </script>
+</body>
+</html>
